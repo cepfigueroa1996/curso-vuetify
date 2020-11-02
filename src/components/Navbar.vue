@@ -63,13 +63,12 @@
 		        	<v-btn depressed color="light-blue accent-2" class="white--text  caption font-weight-light">
 		        		<v-icon small>mdi-key</v-icon>
 		        		<span class="ml-1">Editar</span>
-		        		{{  $store.state.color }} 
 		        	</v-btn>
 		        </v-list-item>
 
 		        <v-divider></v-divider>
 
-				<v-list-item v-for="li in links" :key="li" :to="li.route">
+				<v-list-item v-for="li in links" :key="li" :to="li.route" >
 					<v-list-item-action>
 						<v-icon class="white--text">{{ li.icon}}</v-icon>
 					</v-list-item-action>
@@ -97,7 +96,7 @@
 				drawer: false,
 				links:[
 					{icon: 'mdi-home', text: 'Inicio', route:'/'},
-					{icon: 'mdi-folder', text: 'Datos', route:'/project'},
+					{icon: 'mdi-table', text: 'Tablas', route:'/project'},
 					{icon: 'mdi-face', text: 'Equipo', route:'/team'},
 					{icon: 'mdi-key', text: 'General', route:'/general'},
 				],

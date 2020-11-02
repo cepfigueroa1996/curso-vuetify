@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Info from '../views/Info.vue'
 import Team from '../views/Team.vue'
-import Project from '../views/Project.vue'
+import Project from '../views/table/Project.vue'
 import General from '../views/General.vue'
 
 Vue.use(VueRouter)

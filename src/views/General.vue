@@ -50,8 +50,8 @@
 				  </v-col>
 				  <v-col md="4">
 				    <v-btn @click="value=1">
-				      <span>Favorites</span>
-				      <v-icon>mdi-heart</v-icon>
+				      <span>Actividad reciente</span>
+				      <v-icon>mdi-chat</v-icon>
 				    </v-btn>
 				  </v-col>
 				  <v-col md="4">
@@ -65,6 +65,9 @@
 	      </v-col>
 
 	      <paleta v-if="value == 0"></paleta>
+	      <c-timeline v-if="value == 1"></c-timeline>
+
+
 	    </v-row>
 
 	  </v-container>
@@ -75,10 +78,11 @@
 
 <script>
 	import paleta from '@/views/configuracion/Paleta'
+	import cTimeline from '@/views/general/components/Timeline'
 
 	export default{
 		components:{
-			paleta
+			paleta, cTimeline
 		},
 		data(){
 			return{
