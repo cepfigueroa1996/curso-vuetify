@@ -2,8 +2,8 @@
   <v-timeline>
   	<h1 class="subheading pa-5 grey--text font-weight-light">Actividad reciente</h1>
     <v-timeline-item
-      v-for="n in co"
-      :key="n"
+      v-for="(n, iTime) in co"
+      :key="iTime"
       large
       class="pa-5"
     >

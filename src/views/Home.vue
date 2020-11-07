@@ -7,7 +7,7 @@
 		    <v-tooltip bottom>
 		      <template v-slot:activator="{ on, attrs }">
 		  		<v-btn 
-		  			flat depressed 
+		  			depressed 
 		  			color="grey lighten-4"
 			        dark
 			        v-bind="attrs"
@@ -22,7 +22,7 @@
 		    <v-tooltip bottom>
 		      <template v-slot:activator="{ on, attrs }">
 		  		<v-btn 
-		  			flat depressed 
+		  			depressed 
 		  			color="grey lighten-4"
 			        dark
 			        v-bind="attrs"
@@ -43,6 +43,7 @@
 
 
 	  	</v-row>
+
 	    <v-row no-gutters class="white">
 
 	    	<v-col md="12">
@@ -53,10 +54,10 @@
 			<v-col
 
 				class="mt-5 mx-5 mb-5 mr-5 bc-left"
-			cols="12"
-			sm="12"
-			md="3"
-			v-for="ct in seccion" :key="ct"
+				cols="12"
+				sm="12"
+				md="3"
+				v-for="(ct, iPro) in seccion" :key="iPro"
 			>
 
 				<h2 class="caption grey--text font-weight-light"> {{ ct.descripcion }}</h2>
@@ -66,10 +67,10 @@
 
 				<v-chip small class="right" color="cyan lighten-2 white--text">{{ ct.cargo}}</v-chip>
 
-				<v-div>
+				
 					<h2 class="caption grey--text font-weight-light mt-2">Progreso</h2>
 					<v-progress-linear  :value="ct.status" color="green"></v-progress-linear>
-				</v-div>
+
 
 			</v-col>
 
@@ -91,6 +92,16 @@
     	</v-row>
 
 
+	  	<v-row>
+			<card-list :items="items" cMd="8"></card-list>
+			<v-col md="4" justify="center">
+				<v-date-picker v-model="picker"></v-date-picker>
+			</v-col>	  		
+	  	</v-row>
+
+
+
+
 	  </v-container>
 
   </div>
@@ -100,14 +111,48 @@
 
 import cHistogram from '@/views/grafico/Histogram'
 import cLine from '@/views/grafico/Line'
+import CardList from '@/views/custom/CardList'
 
 
 export default {
 
   name: 'Home',
-  components: { cHistogram, cLine },
+  components: { cHistogram, cLine, CardList },
   data(){
   	return{
+  		picker: new Date().toISOString().substr(0, 10),
+		items: [
+			{ header: 'Today' },
+			{
+				avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+				title: 'Brunch this weekend?',
+				subtitle: `<span class="text--primary">Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
+			},
+			{ divider: true, inset: true },
+			{
+				avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+				title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
+				subtitle: `<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.`,
+			},
+			{ divider: true, inset: true },
+			{
+				avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+				title: 'Oui oui',
+				subtitle: '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
+			},
+			{ divider: true, inset: true },
+			{
+				avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
+				title: 'Birthday gift',
+				subtitle: '<span class="text--primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
+			},
+			{ divider: true, inset: true },
+			{
+				avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
+				title: 'Recipe to try',
+				subtitle: '<span class="text--primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
+			},
+		],
   		seccion: [
   			{ title: 'Carlos Figueroa', descripcion: 'Romana IENCA', status: '99', cargo: 'Consultor SAP'},
   			{ title: 'Carlos Figueroa', descripcion: 'Gestor de impresiones', status: '55', cargo: 'Consultor SAP'},

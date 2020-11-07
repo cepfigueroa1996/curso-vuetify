@@ -10,6 +10,7 @@ import VCharts from 'v-charts'
 Vue.config.productionTip = false
 Vue.use(VCharts)
 
+
 new Vue({
   router,
   store,

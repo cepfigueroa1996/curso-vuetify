@@ -2,8 +2,7 @@
   <div >
     <h1 class="headline grey--text font-weight-light">Tablas</h1>
 
-    <v-content class="subheading ma-0 pa-0">
-
+    <v-container class="subheading ma-0 pa-0">
 
     	<v-row>
     		<c-tooltip 
@@ -74,7 +73,7 @@
 
 			</v-col>
     	</v-row>
-    </v-content>
+    </v-container>
   </div>
 </template>
 

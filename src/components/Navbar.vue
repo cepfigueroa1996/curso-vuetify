@@ -5,8 +5,8 @@
 				@click="drawer =! drawer"
 			></v-app-bar-nav-icon>
 			<v-toolbar-title class="text-uppercase grey--text">
-				<span class="font-weight-light">Curso</span>
-				<span>Ninja</span>
+				<span class="font-weight-light">Tema</span>
+				<span>universal</span>
 			</v-toolbar-title>
 			<v-spacer></v-spacer>
 
@@ -26,7 +26,7 @@
 		          v-for="(item, index) in links"
 		          :key="index"
 		          link
-		          :to="item.route"
+		          :to="index"
 		        >
 		          <v-list-item-title >{{ item.text}}</v-list-item-title>
 		        </v-list-item>
@@ -50,7 +50,7 @@
 			<v-list>
 		        <v-list-item class="px-2 justify-center" >
 					<v-list-item-avatar size="100" >
-						<v-img  src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"></v-img>
+						<v-img  src="@/assets/logo.png"></v-img>
 					</v-list-item-avatar>
 		        </v-list-item>
 		        <v-list-item class="px-2 mb-3">
@@ -68,7 +68,7 @@
 
 		        <v-divider></v-divider>
 
-				<v-list-item v-for="li in links" :key="li" :to="li.route" >
+				<v-list-item v-for="li in links" :key="li.id" :to="li.route" >
 					<v-list-item-action>
 						<v-icon class="white--text">{{ li.icon}}</v-icon>
 					</v-list-item-action>
@@ -98,6 +98,10 @@
 					{icon: 'mdi-home', text: 'Inicio', route:'/'},
 					{icon: 'mdi-table', text: 'Tablas', route:'/project'},
 					{icon: 'mdi-face', text: 'Equipo', route:'/team'},
+					{icon: 'mdi-ballot', text: 'Encuesta', route:'/file'},
+					{icon: 'mdi-card', text: 'Formulario', route:'/form'},
+					{icon: 'mdi-comment', text: 'Reuniones', route:'/meeting'},
+					{icon: 'mdi-file', text: 'Archivos', route:'/pdf'},
 					{icon: 'mdi-key', text: 'General', route:'/general'},
 				],
 			}

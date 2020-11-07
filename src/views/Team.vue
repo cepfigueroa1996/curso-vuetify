@@ -7,8 +7,8 @@
     			cols="12"
     			sm="12"
     			md="4"
-    			v-for="t in team"
-    			:key="t"
+    			v-for="(t, iTeam) in team"
+    			:key="iTeam"
     		>
     			<v-card flat  class="text-xs-center ma-3" align="center">
     				<v-responsive class="pt-4">
@@ -27,7 +27,7 @@
     					<div class="grey--text">{{ t.descripcion }}</div>
     				</v-card-text>
     				<v-card-actions>
-    					<v-btn flat depressed color="white">
+    					<v-btn  depressed color="white">
     						<span>Enviar mensaje</span>
     					</v-btn>
     				</v-card-actions>

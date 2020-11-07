@@ -3,7 +3,7 @@
 	    <v-tooltip bottom>
 	      <template v-slot:activator="{ on, attrs }">
 	  		<v-btn 
-	  			flat depressed 
+	  			 depressed 
 	  			color="grey lighten-4"
 		        dark
 		        v-bind="attrs"
